@@ -37,24 +37,6 @@ Performance comparison of Protobuf vs MessagePack across Golang and Java.
 - Protobuf: 1.98M rec/sec (ser), 983K rec/sec (deser)
 - MessagePack: 676K rec/sec (ser), 396K rec/sec (deser)
 
-## Cross-Language Comparison
-
-### Protobuf Performance
-
-| Operation | Golang | Java | Faster |
-|-----------|--------|------|--------|
-| **Serialization** | 1627ms | 505ms | Java (3.22x faster) |
-| **Deserialization** | 1765ms | 1017ms | Java (1.74x faster) |
-| **Size** | 292 MB | 292 MB | Equal |
-
-### MessagePack Performance
-
-| Operation | Golang | Java | Faster |
-|-----------|--------|------|--------|
-| **Serialization** | 1571ms | 1480ms | Java (6% faster) |
-| **Deserialization** | 2047ms | 2527ms | Golang (23% faster) |
-| **Size** | 489 MB | 469 MB | Java (4% smaller) |
-
 ## Key Insights
 
 ### Algorithm Comparison
