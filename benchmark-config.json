@@ -1,0 +1,14 @@
+{
+  "num_records": 1000000,
+  "num_iterations": 10,
+  "data": {
+    "string_length": 20,
+    "binary_size": 32,
+    "array_min_size": 1,
+    "array_max_size": 5,
+    "map_min_size": 1,
+    "map_max_size": 3,
+    "struct_min_size": 1,
+    "struct_max_size": 3
+  }
+}

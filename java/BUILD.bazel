@@ -1,0 +1,54 @@
+# Java root BUILD file
+
+# Protobuf generated code (pre-generated with protoc)
+java_library(
+    name = "feature_java_proto",
+    srcs = glob(["src/main/java/com/benchmark/proto/*.java"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        "@maven//:com_google_protobuf_protobuf_java",
+    ],
+)
+
+# Config library
+java_library(
+    name = "config",
+    srcs = glob(["src/main/java/com/benchmark/config/*.java"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        "@maven//:com_google_code_gson_gson",
+    ],
+)
+
+# Model library
+java_library(
+    name = "model",
+    srcs = glob(["src/main/java/com/benchmark/model/*.java"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        ":config",
+        ":feature_java_proto",
+        "@maven//:com_fasterxml_jackson_core_jackson_databind",
+        "@maven//:com_google_protobuf_protobuf_java",
+        "@maven//:org_msgpack_jackson_dataformat_msgpack",
+        "@maven//:org_msgpack_msgpack_core",
+    ],
+)
+
+# Benchmark binary
+java_binary(
+    name = "benchmark",
+    srcs = ["src/main/java/com/benchmark/Benchmark.java"],
+    data = ["//:benchmark-config.json"],
+    main_class = "com.benchmark.Benchmark",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":config",
+        ":feature_java_proto",
+        ":model",
+        "@maven//:com_fasterxml_jackson_core_jackson_databind",
+        "@maven//:com_google_protobuf_protobuf_java",
+        "@maven//:org_msgpack_jackson_dataformat_msgpack",
+        "@maven//:org_msgpack_msgpack_core",
+    ],
+)

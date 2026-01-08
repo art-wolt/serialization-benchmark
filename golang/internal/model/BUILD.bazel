@@ -1,0 +1,16 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "model",
+    srcs = [
+        "converter.go",
+        "generator.go",
+        "model.go",
+    ],
+    importpath = "serialization-benchmark/internal/model",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//golang/proto",
+        "@com_github_vmihailenco_msgpack_v5//:msgpack",
+    ],
+)

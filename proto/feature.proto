@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package feature;
+
+option go_package = "serialization-benchmark/proto;proto";
+option java_package = "com.benchmark.proto";
+option java_outer_classname = "Feature";
+
+message ArrayValue {
+  repeated string elements = 1;
+}
+
+message MapValue {
+  map<string, string> entries = 1;
+}
+
+message StructValue {
+  map<string, string> fields = 1;
+}
+
+// FeatureRecord represents a table row with all data types
+message FeatureRecord {
+  string id = 1;
+  int64 timestamp = 2;
+
+  // Primitive numeric types
+  bool bool_value = 3;
+  int32 byte_value = 4;
+  int32 short_value = 5;
+  int32 int_value = 6;
+  int64 long_value = 7;
+
+  // Floating point types
+  float float_value = 8;
+  double double_value = 9;
+  string decimal_value = 10;
+
+  // String and binary types
+  string string_value = 11;
+  bytes binary_value = 12;
+
+  // Date and time types
+  int32 date_value = 13;
+  int64 timestamp_value = 14;
+  int64 timestamp_ntz_value = 15;
+
+  // Complex types (containers)
+  ArrayValue array_value = 16;
+  MapValue map_value = 17;
+  StructValue struct_value = 18;
+}

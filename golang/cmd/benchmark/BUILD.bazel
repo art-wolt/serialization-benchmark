@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_binary")
+
+go_binary(
+    name = "benchmark",
+    srcs = ["main.go"],
+    data = ["//:benchmark-config.json"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//golang/internal/config",
+        "//golang/internal/model",
+        "//golang/proto",
+        "@com_github_vmihailenco_msgpack_v5//:msgpack",
+        "@org_golang_google_protobuf//proto",
+    ],
+)
