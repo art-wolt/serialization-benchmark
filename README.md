@@ -28,12 +28,7 @@ bazel run //java:benchmark
 
 ## Documentation
 
-📚 See the [documentation](docs/) for detailed information:
-
-- [Benchmark Scenarios & Methodology](docs/benchmark-scenarios.md) - How the benchmarks work
-- [Golang Implementation](docs/benchmark-go.md) - Running and understanding Go benchmarks
-- [Java Implementation](docs/benchmark-java.md) - Running and understanding Java benchmarks
-- [Benchmark Results & Summary](docs/benchmark-summary.md) - Performance comparisons
+📚 See the [documentation](docs/) for detailed information
 
 ## License
 

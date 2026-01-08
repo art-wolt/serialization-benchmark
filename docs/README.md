@@ -14,8 +14,3 @@ Welcome to the Serialization Benchmark documentation.
 ## Results
 
 - **[Benchmark Summary](benchmark-summary.md)** - Performance results and comparisons across languages and algorithms
-
-## Quick Links
-
-- [Main README](../README.md) - Project overview
-- [Configuration File](../benchmark-config.json) - Benchmark settings
