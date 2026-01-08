@@ -1,0 +1,5 @@
+# Golang root BUILD file
+exports_files([
+    "go.mod",
+    "go.sum",
+])

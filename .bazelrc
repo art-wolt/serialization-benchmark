@@ -1,0 +1,24 @@
+# Enable bzlmod
+common --enable_bzlmod
+
+# Platform specific config
+common --enable_platform_specific_config
+
+# Performance
+build --jobs=auto
+
+# Output
+build --show_timestamps
+build --color=yes
+
+# Cache
+build --disk_cache=~/.cache/bazel
+
+# Test output
+test --test_output=errors
+
+# macOS specific
+build:macos --sandbox_add_mount_pair=/var/tmp
+
+# Linux specific
+build:linux --sandbox_add_mount_pair=/tmp
